@@ -1,0 +1,19 @@
+﻿@*Model says what information to send to the page*@
+@model MVC_Intro.ViewModels.employeeDepartmentViewModel
+@*layout is like index.html in angular and this page is what's going into y our ng-view-- see "render body" in layout*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Name")
+    @Html.EditorFor(model => model.Name)
+
+    <input type="submit" value="Edit" />
+}
